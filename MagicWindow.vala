@@ -1,20 +1,11 @@
-/* Nothing yet. */
-fix_hint (MagicWindow *window)
-{
-    GdkWindow *gw;
-    Display   *d;
-    Window     xid;
-    XWMHints  *wm_hints;
-
-    gw = gtk_widget_get_window (GTK_WIDGET(window));
-    d = GDK_WINDOW_XDISPLAY(gw);
-    xid = GDK_WINDOW_XID(gw);
-
-    wm_hints = XGetWMHints (d,xid);
-    
-    wm_hints->input = False;
-
-    XSetWMHints (d, xid, wm_hints);
-
-    XFree (wm_hints);
+class MagicWindow: Gtk.Window {
+    private void fix_hint () {
+        /* Get the GdkWindow of the widget. */
+        /* Get the Display* of the GdkWindow */
+        /* Get the XID of the GdkWindow */
+        /* Get the XWMHints of the XID */
+        /* change the input hint to False */
+        /* Set the XWMHints of the XID */
+    }
+    /* Override the methods that lead to Gdk changing the hint so they fix the hint after the normal call. */
 }
